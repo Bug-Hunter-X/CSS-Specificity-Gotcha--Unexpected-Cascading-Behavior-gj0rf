@@ -1,0 +1,26 @@
+The solution addresses the specificity issue by ensuring the more specific selector always overrides. There are a few ways to solve this. The simplest is adding `!important` (generally discouraged) to the specific selector:
+
+```css
+div p {
+  color: blue !important;
+}
+
+p {
+  color: red;
+}
+```
+
+Alternatively, a better approach involves being mindful of the order and specificity of selectors, or restructuring the HTML or CSS to improve clarity and predictability:
+
+```css
+div p {
+  color: blue;
+}
+
+/*More specific selector should come first if possible*/
+p {
+  color: red;
+}
+```
+
+Using a more specific selector or reorganizing the CSS rules for clarity are recommended practices over using `!important`.
